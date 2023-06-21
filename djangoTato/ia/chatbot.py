@@ -17,6 +17,8 @@ class tatoBot:
         return sequences
 
     def response(self, text):
-        sequences = self.preprocess_text(text)
-        prediction = self.model.predict(sequences)[0][0]
-        return prediction
+        preprocessed_text = self.preprocess_text(text)
+        prediction = self.model.predict(preprocessed_text)
+        predicted_class_index = tf.argmax(prediction, axis=1).numpy()[0]
+        response = self.tokenizer.index_word[predicted_class_index+1]
+        return response

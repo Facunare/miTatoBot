@@ -3,5 +3,6 @@ from django.urls import path
 from tatoApp import views
 urlpatterns = [
     path('', views.home, name="home"),
-    path('contacto/', views.contacto, name="contacto")
+    path('contacto/', views.contacto, name="contacto"),
+    path('ask/', views.ask, name="ask")
 ]

@@ -19,6 +19,9 @@ label_encoder = LabelEncoder()
 respuestas_codificadas = label_encoder.fit_transform(respuestas)
 tokenizer = Tokenizer()
 tokenizer.fit_on_texts(oraciones)
+tokenizer_json = tokenizer.to_json()
+with open('tokenizer.json', 'w', encoding='utf-8') as f:
+    f.write(tokenizer_json)
 oraciones_secuencia = tokenizer.texts_to_sequences(oraciones)
 
 max_length = max([len(seq) for seq in oraciones_secuencia])

@@ -1,0 +1,448 @@
+ <!-- <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="carousel-container">
+            <div id="carouselExample-materias1" class="carousel slide">
+              <div class="carousel-inner">
+                <h2 class="titulo-card-materias text-center">COMPUTACION</h2>
+                <div class="carousel-item active">
+                  <div class="card card-materias d-block w-80 mx-auto">
+                    <div class="card-body">
+                      <h5 class="card-title">Programacion Inicial</h5>
+                      <p class="card-text text-materias">
+                      En programacion inicial los alumnos daran sus primeros
+                        pasos en la computacion, podran comprender la logica y estructuracion detras de
+                        la programacion, a traves de pseudocodigo como PseInt. Pasado un tiempo, los
+                        alumnos comenzaran a usar lenguajes de alto nivel como Python o Java
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card card-materias d-block w-80 mx-auto">
+                    <div class="card-body">
+                      <h5 class="card-title">Programacion Web</h5>
+                      <p class="card-text">
+                      
+                        En programacion web los alumnos crearan proyectos reales,
+                        aprenderan a desarrollar habilidades como la estructuracion de una pagina web,
+                        ademas de que aprenderan temas que son demandados por el mercado laboral. Estos
+                        se valdran de herramientas tales como HTML5, CSS, JavaScript, entre otros.
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card card-materias d-block w-80 mx-auto">
+                    <div class="card-body">
+                      <h5 class="card-title">Programacion sobre Redes</h5>
+                      <p class="card-text">
+                      
+                        Los alumnos comprenderan las conexiones de los distintos dispositivos
+                        en la red, realizaran simulaciones de conexiones WiFi y LAN a traves de programas tales
+                        como Cisco Packet Tracer.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card card-materias d-block w-80 mx-auto">
+                    <div class="card-body">
+                      <h5 class="card-title">Base de Datos</h5>
+                      <p class="card-text">
+                      
+                        Los alumnos aprenderan a manipular las bases de datos, las cuales
+                        posteriormente podran incluir y complementar a sus distintos proyectos, usaran programas
+                        tales como MySQL.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card card-materias d-block w-80 mx-auto">
+                    <div class="card-body">
+                      <h5 class="card-title">Analisis de Sistemas</h5>
+                      <p class="card-text">
+                      
+                        Los alumnos seran dotados de herramientas para estructurar y
+                        entender la logica detras de los proyectos y sistemas que estos realizen, aprenderan
+                        a organizar sus tiempos, dividir tareas, y usaran programas de administracion como
+                        Trello, haran diagramas de flujo, entre otras cosas.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample-materias1"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample-materias1"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="carousel-container">
+            <div id="carouselExample-materias2" class="carousel slide">
+              <div class="carousel-inner">
+                <h2 class="titulo-card-materias text-center">CONSTRUCCIÓN</h2>
+                <div class="carousel-item active">
+                  <div class="card card-materias d-block w-80 mx-auto">
+                    <div class="card-body">
+                      <h5 class="card-title">Taller</h5>
+                      <p class="card-text">
+                      
+                        Los alumnos contaran con un espacio para desarrollar diferentes habilidades, como en
+                        Carpinteria, en Soldadura, Hojalateria, Electricidad, Electronica, entre muchas otras
+                        materias.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card card-materias d-block w-80 mx-auto">
+                    <div class="card-body">
+                      <h5 class="card-title">Teoria de la Arquitectura</h5>
+                      <p class="card-text">
+                      
+                        Los alumnos contaran con un espacio para desarrollar diferentes habilidades, como en
+                        Carpinteria, en Soldadura, Hojalateria, Electricidad, Electronica, entre muchas otras
+                        materias.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card card-materias d-block w-80 mx-auto">
+                    <div class="card-body">
+                      <h5 class="card-title">Teoria de los Materiales</h5>
+                      <p class="card-text">
+                      
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid provident,
+                        error veritatis dolorum repudiandae quisquam saepe? Aperiam nesciunt laudantium sint?
+                        
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card card-materias d-block w-80 mx-auto">
+                    <div class="card-body">
+                      <h5 class="card-title">Calculo Estrucutural</h5>
+                      <p class="card-text">
+                      
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid provident,
+                        error veritatis dolorum repudiandae quisquam saepe? Aperiam nesciunt laudantium sint?
+                        
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card card-materias d-block w-80 mx-auto">
+                    <div class="card-body">
+                      <h5 class="card-title">Instalaciones Generales</h5>
+                      <p class="card-text">
+                      
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid provident,
+                        error veritatis dolorum repudiandae quisquam saepe? Aperiam nesciunt laudantium sint?
+                        
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample-materias2"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample-materias2"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div> 
+        </div>
+      </div> -->
+
+
+
+      EL COSO POSTA:
+
+      <!-- <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="tarjetas-container">
+            <div class="tarjetas">
+              <div class="imagen">
+                <img src="/img/progInicialCalidad.jpg" alt="Imagen de la tarjeta">
+              </div>
+              <h5 class="titulo-card-materias">Programacion Inicial</h5>
+              <p class="truncate-text">
+                En programacion inicial los alumnos daran sus primeros
+                pasos en la computacion, podran comprender la logica y estructuracion detras de
+                la programacion, a traves de pseudocodigo como PseInt. Pasado un tiempo, los
+                alumnos comenzaran a usar lenguajes de alto nivel como Python o Java
+              </p>
+            </div>
+            <div class="tarjetas">
+              <div class="imagen">
+                <img src="/img/progWebCalidad.jpg" alt="Imagen de la tarjeta">
+              </div>
+              <h5 class="titulo-card-materias">Programacion Web</h5>
+              <p class="truncate-text">
+
+                En programacion web los alumnos crearan proyectos reales,
+                aprenderan a desarrollar habilidades como la estructuracion de una pagina web,
+                ademas de que aprenderan temas que son demandados por el mercado laboral. Estos
+                se valdran de herramientas tales como HTML5, CSS, JavaScript, entre otros.
+              </p>
+            </div>
+            <div class="tarjetas">
+              <div class="imagen">
+                <img src="/img/redesCalidad.jpg" alt="Imagen de la tarjeta">
+              </div>
+              <h5 class="titulo-card-materias">Programacion sobre Redes</h5>
+              <p class="truncate-text">
+
+                Los alumnos comprenderan las conexiones de los distintos dispositivos
+                en la red, realizaran simulaciones de conexiones WiFi y LAN a traves de programas tales
+                como Cisco Packet Tracer.
+              </p>
+            </div>
+            <div class="tarjetas">
+              <div class="imagen">
+                <img src="/img/baseDeDatosCalidad.jpg" alt="Imagen de la tarjeta">
+              </div>
+              <h5 class="titulo-card-materias">Base de <br> Datos</h5>
+              <p class="truncate-text">
+                Los alumnos aprenderan a manipular las bases de datos, las cuales
+                posteriormente podran incluir y complementar a sus distintos proyectos, usaran programas
+                tales como MySQL.
+              </p>
+            </div>
+            <div class="tarjetas">
+              <div class="imagen">
+                <img src="/img/analisisDatosCalidad.jpg" alt="Imagen de la tarjeta">
+              </div>
+              <h5 class="titulo-card-materias">Analisis de Sistemas</h5>
+              <p class="truncate-text">
+                Los alumnos seran dotados de herramientas para estructurar y
+                entender la logica detras de los proyectos y sistemas que estos realizen, aprenderan
+                a organizar sus tiempos, dividir tareas, y usaran programas de administracion como
+                Trello, haran diagramas de flujo, entre otras cosas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br>
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="tarjetas-container">
+            <div class="tarjetas">
+              <div class="imagen">
+                <img src="/img/progInicialCalidad.jpg" alt="Imagen de la tarjeta">
+              </div>
+              <h5 class="titulo-card-materias">Programacion Inicial</h5>
+              <p class="truncate-text">
+                En programacion inicial los alumnos daran sus primeros
+                pasos en la computacion, podran comprender la logica y estructuracion detras de
+                la programacion, a traves de pseudocodigo como PseInt. Pasado un tiempo, los
+                alumnos comenzaran a usar lenguajes de alto nivel como Python o Java
+              </p>
+            </div>
+            <div class="tarjetas">
+              <div class="imagen">
+                <img src="/img/progWebCalidad.jpg" alt="Imagen de la tarjeta">
+              </div>
+              <h5 class="titulo-card-materias">Programacion Web</h5>
+              <p class="truncate-text">
+
+                En programacion web los alumnos crearan proyectos reales,
+                aprenderan a desarrollar habilidades como la estructuracion de una pagina web,
+                ademas de que aprenderan temas que son demandados por el mercado laboral. Estos
+                se valdran de herramientas tales como HTML5, CSS, JavaScript, entre otros.
+              </p>
+            </div>
+            <div class="tarjetas">
+              <div class="imagen">
+                <img src="/img/redesCalidad.jpg" alt="Imagen de la tarjeta">
+              </div>
+              <h5 class="titulo-card-materias">Programacion sobre Redes</h5>
+              <p class="truncate-text">
+
+                Los alumnos comprenderan las conexiones de los distintos dispositivos
+                en la red, realizaran simulaciones de conexiones WiFi y LAN a traves de programas tales
+                como Cisco Packet Tracer.
+              </p>
+            </div>
+            <div class="tarjetas">
+              <div class="imagen">
+                <img src="/img/baseDeDatosCalidad.jpg" alt="Imagen de la tarjeta">
+              </div>
+              <h5 class="titulo-card-materias">Base de <br> Datos</h5>
+              <p class="truncate-text">
+                Los alumnos aprenderan a manipular las bases de datos, las cuales
+                posteriormente podran incluir y complementar a sus distintos proyectos, usaran programas
+                tales como MySQL.
+              </p>
+            </div>
+            <div class="tarjetas">
+              <div class="imagen">
+                <img src="/img/analisisDatosCalidad.jpg" alt="Imagen de la tarjeta">
+              </div>
+              <h5 class="titulo-card-materias">Analisis de Sistemas</h5>
+              <p class="truncate-text">
+                Los alumnos seran dotados de herramientas para estructurar y
+                entender la logica detras de los proyectos y sistemas que estos realizen, aprenderan
+                a organizar sus tiempos, dividir tareas, y usaran programas de administracion como
+                Trello, haran diagramas de flujo, entre otras cosas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+      C S S    D E L    C O D I G O    A N T E R I O R
+
+      /* .titulo-card-materias {
+    font-size: 30px;
+    top: 0;
+    font-family: 'Roboto', monospace;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(94, 109, 189, 0.7);
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.titulo-card-materias::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(94, 109, 189, 0.8);
+    transition: width 0.5s ease;
+}
+
+.tarjetas-container .tarjetas:hover .titulo-card-materias::before {
+    width: 100%;
+}
+
+.card-materias {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+}
+
+
+.tarjetas-container {
+    display: flex;
+    width: 900px;
+    height: 430px;
+}
+
+
+
+.tarjetas-container .tarjetas {
+    position: relative;
+    box-sizing: content-box;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    overflow: hidden;
+    opacity: .8;
+    transition: .5s ease;
+}
+
+.tarjetas-container .tarjetas:hover {
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.tarjetas-container .tarjetas .imagen {
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.tarjetas-container .tarjetas .imagen img {
+    object-fit: cover;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.tarjetas-container .tarjetas:hover .imagen img {
+    filter: grayscale(0%);
+}
+
+
+.truncate-text {
+    font-weight: bold;
+    padding: 10px;
+    color: white;
+    border: 1px solid #999;
+    background-color: rgba(94, 109, 189, 0.7);
+    letter-spacing: 2px;
+    overflow: hidden;
+    text-align: start;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.truncate-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(94, 109, 189, 0.8);
+    transition: width 0.41s ease-in;
+    z-index: -1;
+}
+
+.tarjetas-container .tarjetas:hover .truncate-text::before {
+    width: 100%;
+    transition: width 0.8s ease-out;
+}
+
+.truncate-text:hover {
+    -webkit-line-clamp: unset;
+} */

@@ -8,7 +8,7 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 from scipy.spatial.distance import cosine
 from sklearn.preprocessing import LabelEncoder
-
+import tensorflow as tf
 from sklearn.preprocessing import LabelEncoder
 
 class tatoBot:
@@ -37,11 +37,10 @@ class tatoBot:
         text = pad_sequences(text, maxlen=self.max_length)
         return text
     
-    def responder_oracion(self, oracion):
-        oracion_codificada = self.preprocess_text(oracion)
-        prediccion = self.model.predict(oracion_codificada)
-        prediccion_clase = np.argmax(prediccion, axis=2)
-        respuesta_codificada = self.label_encoder.classes_[prediccion_clase[0]]
-        respuesta = respuesta_codificada
-        return respuesta
+    def responder_oracion(self, text):
+        preprocessed_text = self.preprocess_text(text)
+        prediction = self.model.predict(preprocessed_text)
+        predicted_class_index = tf.argmax(prediction, axis=1).numpy()[0]
+        response = self.tokenizer.index_word[predicted_class_index+1]
+        return response
 

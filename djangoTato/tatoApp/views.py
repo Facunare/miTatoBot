@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from ia.chatbot import tatoBot
 from .models import Messages
 # Create your views here.
@@ -15,15 +15,15 @@ def contacto(request):
 def ask(request):
     if request.method == 'POST':
         
-        mensaje = Messages.objects.create(content = request.POST['message'])
+        Messages.objects.create(content = request.POST['message'])
         
-        # oracion = request.POST['message']
-        # detector = tatoBot(model_path='ia/model.h5', tokenizer_path='ia/tokenizer.json', max_length=13)
-        # etiquetas = ['¡Hola! me llamo Tatobot', '¡Hola! Estoy muy bien ¿y tu?', 'La escuela se llama Almirante Guillermo Brown mejor conocida como ET36', 'El colegio queda en el Polo educativo Saavedra en la calle Galvan 3700', 'El colegio se llama Almirante Guillermo Brown', 'El nombre abreviado del colegio es ET36', 'El colegio se encuentra en el barrio de Saavedra']
-        # detector.label_encoder.fit(etiquetas)
-        # respuesta = detector.responder_oracion(oracion)
-        # return render(request, 'contacto.html', {'respuesta': respuesta})
-        return render(request, 'contacto.html')
+        oracion = request.POST['message']
+        detector = tatoBot(model_path='ia/model.h5', tokenizer_path='ia/tokenizer.json', max_length=13)
+        respuesta = detector.responder_oracion(oracion)
+        if respuesta:
+            Messages.objects.create(content = str(respuesta), response = True)
+
+        return redirect('contacto')
     else:
     
         return render(request, 'contacto.html')

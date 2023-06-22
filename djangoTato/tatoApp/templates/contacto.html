@@ -25,16 +25,16 @@
       .mainMessages{
         position: absolute;
         top: 0;
+        display: flex;
         left: 0;
         width: 100vw;
         height: 100vh;
-        overflow: hidden;
-        display: flex;
       }
       .messages{
-        height: 100%;
+        overflow: hidden;
         width: 100%;
         display: flex;
+        height: 50%;
         flex-direction: column;
         align-self: flex-end;
       }
@@ -51,10 +51,46 @@
       }
     .formMessage{
       display: flex;
+      position: absolute;
+      bottom: 0;
       align-items: flex-end;
-      justify-self: flex-end;
     }
     
+    .msg{
+      align-self: center;
+      justify-self: center;
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+      flex-direction: column;
+      padding: 50px;
+      display: flex;
+      right: 0;
+    }
+    
+    .msg .question, .msg .response{
+      height: auto;
+      border-radius: 15px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      background-color: rgb(212, 99, 99);
+      width: auto;
+    }
+
+    .msg .response{
+      align-self: flex-start;
+      background-color: green;
+    }
+
+    .msg .question{
+      align-self: flex-end;
+    }
+
+    .msg .question span{
+      font-size: 12px;
+    }
     
     </style>
     <body>
@@ -96,9 +132,15 @@
       </header>
       <main class="mainMessages">
         <div class="messages">
-          {% for mensaje in mensajes %}
-            <p style="color:black;">{{mensaje.content}}</p>
-          {% endfor %}
+          <div class="msg">
+
+            {% for mensaje in mensajes %}
+              <p style="color:black;" class="question">{{mensaje.content}}<span>{{ mensaje.created_at | date:"H:i" }}</span></p>
+              {% if mensaje.response %}
+              <p style="color:black;" class="response">{{mensaje.content}}<span>{{ mensaje.created_at | date:"H:i" }}</span></p>
+              {% endif %}
+            {% endfor %}
+          </div>
           <form action="{% url 'ask' %}" class="formMessage" method="POST">
             {% csrf_token %}
               <input type="text" name="message" placeholder="Escribe tu mensaje..." required>

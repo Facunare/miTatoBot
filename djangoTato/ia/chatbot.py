@@ -16,28 +16,24 @@ import pickle
 
 class tatoBot:
     def __init__(self, model_path, tokenizer_path, label_encoder_path, max_length):
-        # Carga el modelo y el tokenizer
+        
         self.model = load_model(model_path)
         self.tokenizer = self.load_tokenizer(tokenizer_path)
         self.max_length = max_length
-        # Carga el LabelEncoder desde el archivo
         self.label_encoder = self.load_label_encoder(label_encoder_path)
     
     def load_tokenizer(self, tokenizer_path):
-        # Carga el tokenizer desde el archivo JSON
         with open(tokenizer_path, 'r') as file:
             tokenizer_json = file.read()
         tokenizer = tokenizer_from_json(tokenizer_json)
         return tokenizer
     
     def load_label_encoder(self, label_encoder_path):
-        # Carga el LabelEncoder desde el archivo con pickle
         with open(label_encoder_path, 'rb') as file:
             label_encoder = pickle.load(file)
         return label_encoder
     
     def preprocess_text(self, text):
-        # Preprocesa el texto utilizando el tokenizer
         text = text.lower()
         text = self.tokenizer.texts_to_sequences([text])
         text = pad_sequences(text, maxlen=self.max_length)

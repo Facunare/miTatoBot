@@ -22,19 +22,18 @@
       <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     </head>
     <style>
-      .mainMessages{
+      /* .mainMessages{
         position: absolute;
         top: 0;
         display: flex;
         left: 0;
         width: 100vw;
         height: 100vh;
-      }
+      } */
       .messages{
-        overflow: hidden;
         width: 100%;
         display: flex;
-        height: 50%;
+        height: 100%;
         flex-direction: column;
         align-self: flex-end;
       }
@@ -46,7 +45,6 @@
       }
       input[name="message"]{
         padding: 5px;
-
         background-color: rgba(211, 210, 210, 0.589);
       }
     .formMessage{
@@ -75,17 +73,20 @@
       display: flex;
       flex-direction: column;
       padding: 10px;
-      background-color: rgb(212, 99, 99);
+      background-color: rgb(218, 123, 123);
       width: auto;
     }
 
     .msg .response{
       align-self: flex-start;
-      background-color: green;
+      background-color: rgb(130, 226, 130);
     }
 
     .msg .question{
       align-self: flex-end;
+    }
+    .msg .response span{
+      font-size: 12px;
     }
 
     .msg .question span{

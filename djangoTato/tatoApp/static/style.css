@@ -864,12 +864,3 @@ p::selection {
 
 /* animaciones ANIMISTA */
 
-.mainMessages{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.messages{
-    height: 50vh;
-}

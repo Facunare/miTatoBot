@@ -135,9 +135,10 @@
           <div class="msg">
 
             {% for mensaje in mensajes %}
-              <p style="color:black;" class="question">{{mensaje.content}}<span>{{ mensaje.created_at | date:"H:i" }}</span></p>
               {% if mensaje.response %}
-              <p style="color:black;" class="response">{{mensaje.content}}<span>{{ mensaje.created_at | date:"H:i" }}</span></p>
+                <p style="color:black;" class="response">{{mensaje.content}}<span>{{ mensaje.created_at | date:"H:i" }}</span></p>
+              {% else %}
+                <p style="color:black;" class="question">{{mensaje.content}}<span>{{ mensaje.created_at | date:"H:i" }}</span></p>
               {% endif %}
             {% endfor %}
           </div>

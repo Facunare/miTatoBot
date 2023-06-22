@@ -11,12 +11,29 @@ from sklearn.preprocessing import LabelEncoder
 from sentence_transformers import SentenceTransformer
 from scipy.spatial.distance import cosine
 
+import pandas as pd
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from sklearn.preprocessing import LabelEncoder
+from tensorflow.keras.preprocessing.text import Tokenizer
+from sklearn.utils import shuffle
+import numpy as np
+from sentence_transformers import SentenceTransformer
+from scipy.spatial.distance import cosine
+import tensorflow as tf
+import pickle
+
 data = pd.read_csv('dataset.csv')
 oraciones = data['oracion'].values
 respuestas = data['respuesta'].values
 
 label_encoder = LabelEncoder()
 respuestas_codificadas = label_encoder.fit_transform(respuestas)
+
+# Guardar el LabelEncoder en un archivo
+with open('label_encoder.pkl', 'wb') as f:
+    pickle.dump(label_encoder, f)
+
 tokenizer = Tokenizer()
 tokenizer.fit_on_texts(oraciones)
 tokenizer_json = tokenizer.to_json()
@@ -36,6 +53,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 model.fit(oraciones_secuencia, tf.keras.utils.to_categorical(respuestas_codificadas), epochs=200)
 
 bert_model = SentenceTransformer('bert-base-nli-mean-tokens')
+
 def similar(a, b):
     embeddings = bert_model.encode([a, b])
     similarity = 1 - cosine(embeddings[0], embeddings[1])
@@ -52,8 +70,8 @@ def responder_oracion(oracion):
         respuesta = "No entiendo tu pregunta"
     return respuesta
 
-
 model.save('model.h5')
+
 while True:
     oracion = input("Escribi: ")
     if oracion.lower() == 'salir':

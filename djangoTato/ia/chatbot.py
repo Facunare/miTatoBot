@@ -3,6 +3,7 @@ from tensorflow.keras.preprocessing.text import tokenizer_from_json
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import json
 from sklearn.preprocessing import LabelEncoder
+import pickle
 
 import numpy as np
 from sentence_transformers import SentenceTransformer
@@ -11,17 +12,16 @@ from sklearn.preprocessing import LabelEncoder
 import tensorflow as tf
 from sklearn.preprocessing import LabelEncoder
 
+import pickle
+
 class tatoBot:
-    def __init__(self, model_path, tokenizer_path, max_length):
+    def __init__(self, model_path, tokenizer_path, label_encoder_path, max_length):
         # Carga el modelo y el tokenizer
         self.model = load_model(model_path)
         self.tokenizer = self.load_tokenizer(tokenizer_path)
         self.max_length = max_length
-        # Inicializa el LabelEncoder
-        self.label_encoder = LabelEncoder()
-        # Ajusta el LabelEncoder con las etiquetas conocidas
-        etiquetas = ['¡Hola! me llamo Tatobot', '¡Hola! Estoy muy bien ¿y tu?', 'La escuela se llama Almirante Guillermo Brown mejor conocida como ET36', 'El colegio queda en el Polo educativo Saavedra en la calle Galvan 3700', 'El colegio se llama Almirante Guillermo Brown', 'El nombre abreviado del colegio es ET36', 'El colegio se encuentra en el barrio de Saavedra']
-        self.label_encoder.fit(etiquetas)  # Reemplaza con las etiquetas adecuadas
+        # Carga el LabelEncoder desde el archivo
+        self.label_encoder = self.load_label_encoder(label_encoder_path)
     
     def load_tokenizer(self, tokenizer_path):
         # Carga el tokenizer desde el archivo JSON
@@ -29,6 +29,12 @@ class tatoBot:
             tokenizer_json = file.read()
         tokenizer = tokenizer_from_json(tokenizer_json)
         return tokenizer
+    
+    def load_label_encoder(self, label_encoder_path):
+        # Carga el LabelEncoder desde el archivo con pickle
+        with open(label_encoder_path, 'rb') as file:
+            label_encoder = pickle.load(file)
+        return label_encoder
     
     def preprocess_text(self, text):
         # Preprocesa el texto utilizando el tokenizer
@@ -40,7 +46,6 @@ class tatoBot:
     def responder_oracion(self, text):
         preprocessed_text = self.preprocess_text(text)
         prediction = self.model.predict(preprocessed_text)
-        predicted_class_index = tf.argmax(prediction, axis=1).numpy()[0]
-        response = self.tokenizer.index_word[predicted_class_index+1]
-        return response
-
+        predicted_class_index = np.argmax(prediction, axis=1)[0]
+        predicted_class_label = self.label_encoder.inverse_transform([predicted_class_index])[0]
+        return predicted_class_label

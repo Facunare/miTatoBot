@@ -15,14 +15,15 @@ def contacto(request):
 def ask(request):
     if request.method == 'POST':
         
-        Messages.objects.create(content = request.POST['message'])
-        
+        mensaje = Messages.objects.create(content = request.POST['message'])
+        print(mensaje)
         oracion = request.POST['message']
-        detector = tatoBot(model_path='ia/model.h5', tokenizer_path='ia/tokenizer.json', max_length=13)
+        detector = tatoBot(model_path='ia/model.h5', tokenizer_path='ia/tokenizer.json', label_encoder_path='ia/label_encoder.pkl', max_length=13)
         respuesta = detector.responder_oracion(oracion)
         if respuesta:
-            Messages.objects.create(content = str(respuesta), response = True)
-
+            answer = Messages.objects.create(content = str(respuesta), response = True)
+        print(answer)
+       
         return redirect('contacto')
     else:
     

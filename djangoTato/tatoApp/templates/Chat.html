@@ -1,0 +1,22 @@
+<main class="mainMessages">
+    <div class="messages">
+      <div class="msg">
+
+        {% for mensaje in mensajes %}
+          {% if mensaje.response %}
+            <p style="color:black;" class="response">{{mensaje.content}}<span>{{ mensaje.created_at | date:"H:i" }}</span></p>
+          {% else %}
+            <p style="color:black;" class="question">{{mensaje.content}}<span>{{ mensaje.created_at | date:"H:i" }}</span></p>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <form action="{% url 'ask' %}" class="formMessage" method="POST">
+        {% csrf_token %}
+          <input type="text" name="message" placeholder="Escribe tu mensaje..." required>
+          <button class="sendMessage">
+            <i class='bx bx-search'></i>
+          </button>
+      </form>
+    </div>
+  </main>
+

@@ -1,8 +1,8 @@
-{% load static %}
-
+{% extends 'base.html' %}{% load static %}
 <!DOCTYPE html>
+{% block content %}
 <html lang="en">
-
+  
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,51 +21,13 @@
 </head>
 
 <body>
-  <header id="header">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <div class="logo-container">
-          <a href="index.html">
-            <img class="img-logo" src="{% static 'logo-et36.png' %}" alt="logo-et36">
-          </a>
-          <h1 class="header-title">E.T36 D.E.15</h1>
-        </div>
-        <button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-          <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item">
-              <div>
-                <a class="nav-link active" aria-current="page" href="#">INICIO</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <div>
-                <a class="nav-link active" aria-current="page" href="#">PROYECTOS</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <div>
-                <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">CONTACTO</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-
   <section class="titulo">
     <div data-aos="fade-down-right">
       <div id="message" class="hidden">
         <div class="message-content">
           ¿Querés inscribirte en el colegio?
         </div>
-        <a href="https://buenosaires.gob.ar/educacion/estudiantes/inscripcionescolar">Preciona aqui</a>
+        <a href="https://buenosaires.gob.ar/educacion/estudiantes/inscripcionescolar">Presiona aqui</a>
         <div class="arrow"></div>
       </div>
    </div>
@@ -199,528 +161,50 @@
         </div>
       </div>
     </section>   
-
-
      <section class="materias">
       <h2 class="main-title">MATERIAS</h2>
       <div class="container">
         <div class="swiper tranding-slider top-slider">
           <div class="swiper-wrapper">
-            <!-- Slide-start -->
-            <div class="swiper-slide tranding-slide">
-              <div class="tranding-slide-img">
-                <img src="/img/computacionCalidad1.jpg" alt="Tranding">
-              </div>
-              <div class="tranding-slide-content">
-                <h1 class="tarjeta-materia-titulo text-center">Programacion Inicial</h1>
-                <div class="tarjeta-materia-texto">
-                  <h2 class="materia-texto">
-                    En programacion inicial los alumnos daran sus primeros
-                    pasos en la computacion, podran comprender la logica y estructuracion detras de
-                    la programacion, a traves de pseudocodigo como PseInt. Pasado un tiempo, los
-                    alumnos comenzaran a usar lenguajes de alto nivel como Python o Java
-                  </h2> 
-                </div>
-              </div>
-            </div>
-            <!-- Slide-end -->
-            <!-- Slide-start -->
-            <div class="swiper-slide tranding-slide">
-              <div class="tranding-slide-img">
-                <img src="/img/computacionCalidad2.jpg" alt="Tranding">
-              </div>
-              <div class="tranding-slide-content">
-                <h1 class="tarjeta-materia-titulo text-center">Programacion Web</h1>
-                <div class="tarjeta-materia-texto">
-                  <h2 class="materia-texto">
-                    
-                    En programacion web los alumnos crearan proyectos reales,
-                    aprenderan a desarrollar habilidades como la estructuracion de una pagina web,
-                    ademas de que aprenderan temas que son demandados por el mercado laboral. Estos
-                    se valdran de herramientas tales como HTML5, CSS, JavaScript, entre otros.
-                  </h2> 
-                </div>
-              </div>
-            </div>
-            <!-- Slide-end -->
-            <!-- Slide-start -->
-            <div class="swiper-slide tranding-slide">
-              <div class="tranding-slide-img">
-                <img src="/img/computacionCalidad3.jpg" alt="Tranding">
-              </div>
-              <div class="tranding-slide-content">
-                <h1 class="tarjeta-materia-titulo text-center">Programacion sobre Redes</h1>
-                <div class="tarjeta-materia-texto">
-                  <h2 class="materia-texto">
-                    En Programacion sobre redes los alumnos comprenderan las conexiones de los distintos dispositivos
-                    en la red, realizaran simulaciones de conexiones WiFi y LAN a traves de programas tales
-                    como Cisco Packet Tracer.
-                  </h2> 
-                </div>
-              </div>
-            </div>
-            <!-- Slide-end -->
-            <!-- Slide-start -->
-            <div class="swiper-slide tranding-slide">
-              <div class="tranding-slide-img">
-                <img src="/img/computacionCalidad4.jpg" alt="Tranding">
-              </div>
-              <div class="tranding-slide-content">
-                <h1 class="tarjeta-materia-titulo text-center">Base de Datos</h1>
-                <div class="tarjeta-materia-texto">
-                  <h2 class="materia-texto">
-                    En Base de Datos los alumnos aprenderan a manipular las bases de datos, las cuales
-                        posteriormente podran incluir y complementar a sus distintos proyectos, usaran programas
-                        tales como MySQL.
-                  </h2>
-                 
-                </div>
-              </div>
-            </div>
-            <!-- Slide-end -->
-            <!-- Slide-start -->
-            <div class="swiper-slide tranding-slide">
-              <div class="tranding-slide-img">
-                <img src="/img/computacionCalidad5.jpg" alt="Tranding">
-              </div>
-              <div class="tranding-slide-content">
-                <h1 class="tarjeta-materia-titulo text-center">Analisis de Sistemas</h1>
-                <div class="tarjeta-materia-texto">
-                  <h2 class="materia-texto">
-                    En Analisis de Sistemas los alumnos seran dotados de herramientas para estructurar y
-                        entender la logica detras de los proyectos y sistemas que estos realizen, aprenderan
-                        a organizar sus tiempos, dividir tareas, y usaran programas de administracion como
-                        Trello, haran diagramas de flujo, entre otras cosas.
-                  </h2>  
-                </div>
-              </div>
-            </div>
-            <!-- Slide-end -->
+            {% for materia in materias %}
+              {% include 'Materia.html' %}
+            {% endfor %}
           </div>
 
-          <div class="tranding-slider-control">
-            <div class="swiper-button-prev slider-arrow" id="slider-prev">
-              <ion-icon name="arrow-back-outline"></ion-icon>
-            </div>
-            <div class="swiper-button-next slider-arrow" id="slider-next">
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
+          {% include 'Pagination.html '%}
         </div>
       </div>
-
-      <br><br><br>
-      
-      <div class="container">
+      <div class="container container-construccion">
         <div class="swiper tranding-slider bottom-slider">
           <div class="swiper-wrapper">
-            <!-- Slide-start -->
-            <div class="swiper-slide tranding-slide">
-              <div class="tranding-slide-img">
-                <img src="/img/construccionCalidad1.jpg" alt="Tranding">
-              </div>
-              <div class="tranding-slide-content">
-                <h1 class="tarjeta-materia-titulo text-center">Taller</h1>
-                <div class="tarjeta-materia-texto">
-                  <h2 class="materia-texto">
-                    En taller los alumnos contaran con un espacio para desarrollar diferentes habilidades, como en
-                    Carpinteria, en Soldadura, Hojalateria, Electricidad, Electronica, entre muchas otras
-                    materias.
-                  </h2> 
-                </div>
-              </div>
-            </div>
-            <!-- Slide-end -->
-            <!-- Slide-start -->
-            <div class="swiper-slide tranding-slide">
-              <div class="tranding-slide-img">
-                <img src="/img/construccionCalidad2.jpg" alt="Tranding">
-              </div>
-              <div class="tranding-slide-content">
-                <h1 class="tarjeta-materia-titulo text-center">Teoria de la Arquitectura</h1>
-                <div class="tarjeta-materia-texto">
-                  <h2 class="materia-texto">
-                    
-                    En teoría de la estructura, los alumnos explorarán los fundamentos esenciales para
-                     comprender y diseñar estructuras sólidas en diversos contextos. A lo largo del curso, se enfocarán 
-                     en adquirir habilidades clave, como el análisis de la estabilidad y resistencia de las estructuras, 
-                     así como el desarrollo de técnicas de modelado y diseño estructural.
-                  </h2> 
-                </div>
-              </div>
-            </div>
-            <!-- Slide-end -->
-            <!-- Slide-start -->
-            <div class="swiper-slide tranding-slide">
-              <div class="tranding-slide-img">
-                <img src="/img/construccionCalidad3.jpg" alt="Tranding">
-              </div>
-              <div class="tranding-slide-content">
-                <h1 class="tarjeta-materia-titulo text-center">Teoria de los Materiales</h1>
-                <div class="tarjeta-materia-texto">
-                  <h2 class="materia-texto">
-                    En teoría de los materiales, los alumnos explorarán los principios fundamentales que rigen 
-                    el comportamiento de los materiales en diferentes contextos y aplicaciones. Durante el curso, se enfocarán 
-                    en adquirir conocimientos y habilidades clave para comprender cómo los materiales responden a las fuerzas, cargas 
-                    y ambientes a los que están expuestos.
-                  </h2> 
-                </div>
-              </div>
-            </div>
-            <!-- Slide-end -->
-            <!-- Slide-start -->
-            <div class="swiper-slide tranding-slide">
-              <div class="tranding-slide-img">
-                <img src="/img/construccionCalidad4.jpg" alt="Tranding">
-              </div>
-              <div class="tranding-slide-content">
-                <h1 class="tarjeta-materia-titulo text-center">Calculo Estrucutural</h1>
-                <div class="tarjeta-materia-texto">
-                  <h2 class="materia-texto">
-                  En cálculo estructural, los alumnos explorarán los conceptos y métodos fundamentales para analizar 
-                  y diseñar estructuras resistentes y estables. Durante el curso, se enfocarán en adquirir conocimientos y habilidades 
-                  clave para comprender cómo las fuerzas y cargas actúan sobre las estructuras, y cómo calcular y dimensionar los elementos
-                   estructurales para garantizar su integridad y seguridad.
-                  </h2>
-                 
-                </div>
-              </div>
-            </div>
-            <!-- Slide-end -->
-            <!-- Slide-start -->
-            <div class="swiper-slide tranding-slide">
-              <div class="tranding-slide-img">
-                <img src="/img/construccionCalidad5.jpg" alt="Tranding">
-              </div>
-              <div class="tranding-slide-content">
-                <h1 class="tarjeta-materia-titulo text-center">Instalaciones Generales</h1>
-                <div class="tarjeta-materia-texto">
-                  <h2 class="materia-texto">
-                    En la materia instalaciones generales, los alumnos explorarán los fundamentos y conceptos clave 
-                    relacionados con los sistemas de instalaciones en edificaciones. Durante el curso, se enfocarán en 
-                    adquirir conocimientos y habilidades necesarios para diseñar, planificar y gestionar los sistemas de
-                     instalaciones esenciales en diferentes tipos de edificios.
-                </div>
-              </div>
-            </div>
-            <!-- Slide-end -->
+            {% for materia in materiasConst %}
+              {% include 'Materia.html' %}
+            {% endfor %}
           </div>
-
-          <div class="tranding-slider-control">
-            <div class="swiper-button-prev slider-arrow" id="slider-prev">
-              <ion-icon name="arrow-back-outline"></ion-icon>
-            </div>
-            <div class="swiper-button-next slider-arrow" id="slider-next">
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-
+          {% include 'Pagination.html '%}
         </div>
       </div>
     </section>
-
 
     <section class="instalaciones">
       <h2 class="main-title">NUESTRAS INSTALACIONES</h2>
-      <div class="row d-flex">
+      {% for instalacion in instalaciones %}
+      <div class="row d-flex" style="margin: 5px 15px; height: auto;" >
         <div class="col-lg-6 col-md-6 col-sm-12">
-          <div data-aos="fade-down-right">
-            <div class="card" onmouseover="toggleCardButtonColors()" onmouseout="toggleCardButtonColors()">
-              <div class="card-body card-instalaciones">
-                <i class="bx bxs-bowl-hot"></i>
-                <h5 class="card-title">Bufet</h5>
-                <p class="card-text">Contamos con este espacio para la venta de comidas hacia alumnos y profesores.
-                </p>
-                <button class="boton-verFotos float-end" href="#" data-bs-toggle="modal" data-bs-target="#myModal">Ver
-                  fotos</button>
-              </div>
-            </div>
+            {% include 'Instalacion.html' %}
           </div>
         </div>
-        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div id="carouselExample1" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="img/bufet2.jpg" class="d-block w-50 mx-auto" alt="Imagen 1">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/bufet.jpg" class="d-block w-50 mx-auto" alt="Imagen 2">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/bufet2.jpg" class="d-block w-50 mx-auto" alt="Imagen 3">
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
-          <div data-aos="fade-down-left">
-            <div class="card" onmouseover="toggleCardButtonColors()" onmouseout="toggleCardButtonColors()">
-              <div class="card-body card-instalaciones">
-                <i class='bx bx-code'></i>
-                <h5 class="card-title">Espacio Digital</h5>
-                <p class="card-text">Sala equipada con computadoras de ultima tecnología, impresoras 3D y televisor
-                  tactil.</p>
-                <button class="boton-verFotos float-end" href="#" data-bs-toggle="modal" data-bs-target="#myModal2">Ver
-                  fotos</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade" id="myModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div id="carouselExample2" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="img/bufet2.jpg" class="d-block w-50 mx-auto" alt="Imagen 1">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/bufet.jpg" class="d-block w-50 mx-auto" alt="Imagen 2">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/bufet2.jpg" class="d-block w-50 mx-auto" alt="Imagen 3">
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-6 col-sm-12">
-          <div data-aos="fade-up-right">
-            <div class="card" onmouseover="toggleCardButtonColors()" onmouseout="toggleCardButtonColors()">
-              <div class="card-body card-instalaciones">
-                <i class='bx bx-building-house'></i>
-                <h5 class="card-title">Zoom</h5>
-                <p class="card-text">Salón de usos múltiples utilizado para reuniones, actos, jornadas, etc.</p>
-                <button class="boton-verFotos float-end" href="#" data-bs-toggle="modal" data-bs-target="#myModal3">Ver
-                  fotos</button>
-              </div>
-            </div>
-          </div>
-          <div class="modal fade" id="myModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div id="carouselExample3" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="img/bufet2.jpg" class="d-block w-50 mx-auto" alt="Imagen 1">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/bufet.jpg" class="d-block w-50 mx-auto" alt="Imagen 2">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/bufet2.jpg" class="d-block w-50 mx-auto" alt="Imagen 3">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample3"
-                      data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample3"
-                      data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Siguiente</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
-          <div data-aos="fade-up-left">
-            <div class="card" onmouseover="toggleCardButtonColors()" onmouseout="toggleCardButtonColors()">
-              <div class="card-body card-instalaciones">
-                <i class='bx bx-desktop'></i>
-                <h5 class="card-title">Laboratorios</h5>
-                <p class="card-text">Contamos con 7 laboratorios distribuidos en toda la institución.</p>
-                <button class="boton-verFotos float-end" href="#" data-bs-toggle="modal" data-bs-target="#myModal4">Ver
-                  fotos</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade" id="myModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div id="carouselExample4" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="img/bufet2.jpg" class="d-block w-50 mx-auto" alt="Imagen 1">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/bufet.jpg" class="d-block w-50 mx-auto" alt="Imagen 2">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/bufet2.jpg" class="d-block w-50 mx-auto" alt="Imagen 3">
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample4"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample4"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          {% endfor %}
     </section>
-
-
-
-
-
     <section class="proyectos">
       <h2 class="main-title">PROYECTOS</h2>
       <div id="carouselExample-proyectos1" class="carousel slide">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container text-center">
-              <div class="row justify-content-center">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                  <div class="proyectos-container nutri-choise">
-                    <h2 class="proyectos-title">Nutri Choise <i class='bx bxs-medal'></i></h2>
-                    <small class="proyectos-descripcion">Nutrichoice es una aplicación que funciona escaneando el
-                      código
-                      de barras
-                      de productos en supermercados usando un teléfono, y devuelve todos los datos nutricionales
-                      incluyendo si es vegano,
-                      vegetariano, o sin tacc.</small>
-                    <hr>
-                    <div class="video-container">
-                      <iframe width="80%" height="480" src="https://www.youtube.com/embed/DvDOYWYVcow"
-                        title="Nutri Choice - Video de Presentacion de Proyecto ET36" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          {% for proyecto in proyectos %}                   
+            <div class="carousel-item active">
+              {% include 'Proyecto.html' %}
             </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container text-center">
-              <div class="row justify-content-center">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                  <div class="proyectos-container nutri-choise">
-                    <h2 class="proyectos-title">One Click Mouse</i></h2>
-                    <small class="proyectos-descripcion">El gyromouse funciona por medio de un giroscopio que toma la
-                      rotación de la cabeza,
-                      y esta con ayuda de una librería, ubica el cursor en los ejes x e y.
-                      Con ayuda de un micrófono tomamos los decibelios y dependiendo de la intensidad de estos, se
-                      realiza click izquierdo o derecho.</small>
-                    <hr>
-                    <div class="video-container">
-                      <iframe width="80%" height="480" src="https://www.youtube.com/embed/yjtzx-GRhmU"
-                        title="OneClickMouse 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-                      encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container text-center">
-              <div class="row justify-content-center">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                  <div class="proyectos-container nutri-choise">
-                    <h2 class="proyectos-title">GyroMouse</i></h2>
-                    <small class="proyectos-descripcion">Nutrichoice es una aplicación que funciona escaneando el
-                      código
-                      de barras
-                      de productos en supermercados usando un teléfono, y devuelve todos los datos nutricionales
-                      incluyendo si es vegano,
-                      vegetariano, o sin tacc.</small>
-                    <hr>
-                    <div class="video-container">
-                      <iframe width="80%" height="480" src="https://www.youtube.com/embed/lKyxwCDfDpE"
-                        title="GyroMouse 2022" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container text-center">
-              <div class="row justify-content-center">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                  <div class="proyectos-container nutri-choise">
-                    <h2 class="proyectos-title">AquaTech</i></h2>
-                    <small class="proyectos-descripcion">Recolectan el agua de lluvia, la filtran y la almacenan para
-                      su
-                      futuro uso.
-                      Fueron ideados para el Polo Educativo Saavedra,
-                      y servirían para el regado y la limpieza del mismo, para así reducir el consumo de agua
-                      potable.</small>
-                    <hr>
-                    <div class="video-container">
-                      <iframe width="80%" height="480" src="https://www.youtube.com/embed/phs4b6lJVsA"
-                        title="Proyecto AquaTech" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-                      gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            {% endfor %}
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample-proyectos1"
           data-bs-slide="prev">
@@ -734,40 +218,166 @@
         </button>
       </div>
     </section>
-
-
-
-
-    <main>
-      <!-- bootstrap -->
+    <button class="message-bubble" id="message-bubble">
+      <i class='bx bxs-comment-dots'></i>
+    </button>
+    <div class="chatbot-container" id="chatbotContainer">
+      <!-- Contenido del chatbot -->
+      <main class="mainMessages">
+        <div class="messages">
+          <div class="msg">
+            {% for mensaje in mensajes %}
+              {% if mensaje.response %}
+                <p style="color:black;" class="response">{{mensaje.content}}<span>{{ mensaje.created_at | date:"H:i" }}</span></p>
+              {% else %}
+                <p style="color:black;" class="question">{{mensaje.content}}<span>{{ mensaje.created_at | date:"H:i" }}</span></p>
+              {% endif %}
+            {% endfor %}
+            {% if mensajes %}
+              <form action="{% url 'deleteChat' %}" class="delete">
+                <button><i class='bx bx-trash'></i></button>
+              </form>
+            {% endif %}
+          </div>
+          <form action="{% url 'ask' %}" class="formMessage" id="formMessage"method="POST">
+            {% csrf_token %}
+              <input required type="text" name="message" placeholder="Escribe tu mensaje..." required>
+              <button class="sendMessage" onclick="sendMessage(event)">
+                <i class='bx bx-search'></i>
+              </button>
+          </form>
+        </div>
+      </main>
+    </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
         </script>
-      <!-- bootstrap -->
-
-      <!-- carrousel materias -->
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
       <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-      <!-- carrousel materias -->
-
-      <!-- javascript de la pagina -->
-      <script src="app.js"></script>
-      <!-- javascript de la pagina -->
-
-      <!-- boxicons -->
+      <script src="{% static 'app.js' %}"></script>
       <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-      <!-- boxicons -->
-
-      <!-- AOS -->
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script>
-        AOS.init();
-      </script>
-      <!-- AOS -->
-</body>
-<style>
-  
-</style>
+        const messageBubble = document.getElementById('message-bubble');
+        const chatbotContainer = document.getElementById('chatbotContainer');
+        let isOpen = false;
+        
+        messageBubble.addEventListener('click', function(event) {
+          if (isOpen) {
+            chatbotContainer.style.display = 'none';
+            isOpen = false;
+          } else {
+            chatbotContainer.style.display = 'block';
+            isOpen = true;
+          }
+        });
+        
 
+
+        AOS.init();      
+      </script>
+      <style>
+        .chatbot-container {
+          position: fixed;
+          bottom: 100px;
+          right: 20px;
+          width: 400px;
+          height: 500px;
+          background-color: white;
+          border-radius: 10px;
+          display: none;
+          z-index: 9999;
+          overflow: hidden;
+          border: 1px solid black;
+        }
+        
+        .mainMessages {
+          height: calc(100% - 40px); /* Resta el espacio del input */
+          overflow-y: auto;
+        }
+        
+        .formMessage {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          padding: 10px;
+          background-color: rgba(211, 210, 210, 0.589);
+        }
+        
+        .formMessage input[type="text"] {
+          width: calc(100% - 40px); /* Resta el espacio del botón */
+          padding: 5px;
+          border: none;
+          outline: none;
+        }
+        
+        .formMessage .sendMessage {
+          width: 30px;
+          height: 30px;
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+        }
+        
+        .formMessage .sendMessage i {
+          font-size: 15px;
+        }
+        
+        .msg {
+          align-self: center;
+          justify-self: center;
+          width: auto;
+          flex-direction: column;
+          padding: 10px;
+          display: flex;
+        }
+        
+        .msg .question,
+        .msg .response {
+          height: auto;
+          border-radius: 15px;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+          background-color: rgb(218, 123, 123);
+          width: auto;
+        }
+        
+        .msg .response {
+          align-self: flex-start;
+          background-color: rgb(130, 226, 130);
+        }
+        
+        .msg .question {
+          align-self: flex-end;
+        }
+        
+        .msg .response span,
+        .msg .question span {
+          font-size: 12px;
+        }
+        
+        .delete {
+          display: flex;
+          justify-content: flex-end;
+          padding: 5px 0;
+        }
+        
+        .delete button {
+          border: none;
+          background-color: transparent;
+        }
+        
+        .delete button i {
+          font-size: 15px;
+        }
+        
+        
+      </style>
+      <script src="{% static 'chat.js' %}"></script>
+      {% endblock content %}
+</body>
 </html>

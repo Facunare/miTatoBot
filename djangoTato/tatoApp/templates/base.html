@@ -1,0 +1,48 @@
+{% load static %}
+
+    
+
+    <header id="header">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <div class="logo-container">
+              <a href="{% url 'home' %}">
+                <img class="img-logo" src="{% static 'logo-et36.png' %}" alt="logo-et36">
+              </a>
+            </div>
+            <button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <div>
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">INICIO</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div>
+                    <a class="nav-link active" aria-current="page" href="#">PROYECTOS</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div>
+                    <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">CONTACTO</a>
+                  </div>
+                </li>
+                {% if user.is_authenticated %}
+                  <li class="nav-item logout"><a class="nav-link active" aria-current="page" href="{% url 'logout' %}">LOG OUT</a></li>
+                {% else %}
+                  <li class="nav-item signup"><a class="nav-link active" aria-current="page" href="{% url 'signup' %}">SIGN UP</a></li>
+                  <li class="nav-item signin"><a class="nav-link active" aria-current="page" href="{% url 'signin' %}">SIGN IN</a></li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      {% block content %}
+      {% endblock content %}
+

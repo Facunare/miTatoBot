@@ -24,13 +24,8 @@ h5::selection,
 p::selection {
     background-color: rgb(241, 239, 231);
 }
-
-/* .click {
-    color: #999
-} */
-
 :root {
-    --primary: rgba(94, 109, 189, 0.8);
+    --primary: rgb(67 96 255 / 80%);
     ;
     --white: #ffffff;
     --bg: #f5f5f5;
@@ -38,7 +33,7 @@ p::selection {
 
 
 ::-webkit-scrollbar {
-    width: 1.3rem;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -47,7 +42,7 @@ p::selection {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(94, 109, 189);
+    background-color: rgb(67 96 255 / 80%);
 }
 
 ::-webkit-scrollbar-track {
@@ -61,7 +56,7 @@ p::selection {
 
 #header {
     width: 100%;
-    background-color: rgba(94, 109, 189, 0.8);
+    background-color: rgb(67 96 255 / 80%);
     margin-top: 15px;
     box-shadow: black;
 }
@@ -83,8 +78,8 @@ p::selection {
 
 
 .img-logo {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     margin: 10px;
 }
 
@@ -210,7 +205,10 @@ p::selection {
 }
 
 .social-links a {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     width: 40px;
     height: 40px;
     color: #fff;
@@ -219,6 +217,7 @@ p::selection {
     border-radius: 40%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease;
+
 }
 
 .social-links a:hover {
@@ -864,3 +863,33 @@ p::selection {
 
 /* animaciones ANIMISTA */
 
+
+.container-construccion{
+    margin-top: 30px;
+}
+
+
+.message-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(0, 51, 128);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    z-index: 9999;
+    transition: background-color ease .3s;
+  }
+  
+  .message-bubble  i {
+    font-size: 35px;
+  }
+
+.message-bubble:hover{
+    background-color:rgb(4, 70, 170);
+}

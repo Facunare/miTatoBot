@@ -1,9 +1,10 @@
+{% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <!DOCTYPE html>
-    <html lang="en">
+  <!DOCTYPE html>
+  {% block content %}
+
+  <html lang="en">
     
     <head>
       <meta charset="UTF-8">
@@ -22,125 +23,102 @@
       <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     </head>
     <style>
-      .mainMessages{
-        position: absolute;
+      
+      .mainMessages {
         display: flex;
         width: 100vw;
         height: 72.5vh;
-        right: 0;
-        bottom: 0;
         align-self: flex-end;
         overflow-y: scroll;
       }
-      header{
-        z-index: 1000;
-      }
-      .messages{
+      
+      .messages {
         width: 100%;
         height: 100%;
         display: flex;
-        max-height: auto;
         flex-direction: column;
-        align-self: flex-end;
         overflow: hidden;
         overflow-y: scroll;
       }
-    
-    input[name="message"], .formMessage{
+      
+      .formMessage {
         width: 100%;
+        display: flex;
+        align-items: flex-end;
+      }
+      
+      form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        bottom: 0;
+        position: fixed;
+        background-color: rgba(211, 210, 210, 0.589);
+      }
+      
+      input[name="message"] {
+        flex-grow: 1;
         border: none;
         outline: none;
-      }
-      input[name="message"]{
         padding: 5px;
         background-color: rgba(211, 210, 210, 0.589);
       }
-    .formMessage{
-      display: flex;
-      position: absolute;
-      bottom: 0;
-      align-items: flex-end;
-    }
-    
-    .msg{
-      align-self: center;
-      justify-self: center;
-      bottom: 0;
-      position: absolute;
-      width: 100%;
-      flex-direction: column;
-      padding: 50px;
-      display: flex;
-      right: 0;
-    }
-    
-    .msg .question, .msg .response{
-      height: auto;
-      border-radius: 15px;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      padding: 10px;
-      background-color: rgb(218, 123, 123);
-      width: auto;
-    }
-
-    .msg .response{
-      align-self: flex-start;
-      background-color: rgb(130, 226, 130);
-    }
-
-    .msg .question{
-      align-self: flex-end;
-    }
-    .msg .response span{
-      font-size: 12px;
-    }
-    .header{
-      z-index: 1000;
-    }
-    .msg .question span{
-      font-size: 12px;
-    }
+      
+      button.sendMessage {
+        border: none;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        transform: translateY(-5px);
+      }
+      
+      .msg {
+        align-self: center;
+        justify-self: center;
+        width: 100%;
+        flex-direction: column;
+        padding: 50px;
+        display: flex;
+      }
+      
+      .msg .question,
+      .msg .response {
+        height: auto;
+        border-radius: 15px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        background-color: rgb(218, 123, 123);
+        width: auto;
+      }
+      
+      .msg .response {
+        align-self: flex-start;
+        background-color: rgb(130, 226, 130);
+      }
+      
+      .msg .question {
+        align-self: flex-end;
+      }
+      
+      .msg .response span,
+      .msg .question span {
+        font-size: 12px;
+      }
+      
+      .delete{
+        margin-bottom: 30px;
+        display: inline-block;
+        background: transparent;
+        padding: 5px 0px;
+      }
     
     </style>
     <body>
-      <header id="header">
-        <nav class="navbar navbar-expand-lg">
-          <div class="container-fluid">
-            <div class="logo-container">
-              <a href="index.html">
-                <img class="img-logo" src="{% static 'logo-et36.png' %}" alt="logo-et36">
-              </a>
-              <h1 class="header-title">E.T36 D.E.15</h1>
-            </div>
-            <button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-              <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <div data-aos="zoom-out">
-                    <a class="nav-link active" aria-current="page" href="index.html">INICIO</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <div data-aos="zoom-out">
-                    <a class="nav-link active" aria-current="page" href="#">PROYECTOS</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <div data-aos="zoom-out">
-                    <a class="nav-link active" aria-current="page" href="#">CONTACTO</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
       <main class="mainMessages">
         <div class="messages">
           <div class="msg">
@@ -153,15 +131,21 @@
               {% endif %}
             {% endfor %}
           </div>
-          <form action="{% url 'ask' %}" class="formMessage" method="POST">
+          {% if mensajes %}
+            <form action="{% url 'deleteChat' %}" class="delete">
+              <button><i class='bx bx-trash'></i></button>
+            </form>
+          {% endif %}
+          <form action="{% url 'ask' %}" class="formMessage" id="formMessage"method="POST">
             {% csrf_token %}
               <input type="text" name="message" placeholder="Escribe tu mensaje..." required>
-              <button class="sendMessage">
+              <button class="sendMessage" onclick="sendMessage(event)">
                 <i class='bx bx-search'></i>
               </button>
           </form>
         </div>
       </main>
+      
     
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
@@ -177,7 +161,7 @@
       <!-- javascript de la pagina -->
       <script src="app.js"></script>
       <!-- javascript de la pagina -->
-
+      <script src="{% static 'chat.js' %}"></script>
       <!-- boxicons -->
       <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
       <!-- boxicons -->
@@ -188,5 +172,7 @@
         AOS.init();
       </script>
       <!-- AOS -->
+          
+  {% endblock content %}
 </body>
 </html>

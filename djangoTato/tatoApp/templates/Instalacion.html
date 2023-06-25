@@ -1,0 +1,54 @@
+
+    <div data-aos="fade-down-right">
+      <div class="card" onmouseover="toggleCardButtonColors()" onmouseout="toggleCardButtonColors()" style="height: auto;">
+        <div class="card-body card-instalaciones">
+          <i class="bx bxs-bowl-hot"></i>
+          <h5 class="card-title">{{instalacion.title}}</h5>
+          <p class="card-text">{{instalacion.descripcion}}
+          </p>
+          <button class="boton-verFotos float-end" href="#" data-bs-toggle="modal" data-bs-target="#myModal">Ver
+            fotos</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselExample1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            {% if instalacion.foto1 %}
+                <div class="carousel-item active">
+                <img src="{{instalacion.foto1.url}}" class="d-block w-50 mx-auto" alt="Imagen 1">
+                </div>
+            {% endif %}
+            {% if instalacion.foto2 %}
+            <div class="carousel-item active">
+            <img src="{{instalacion.foto2.url}}" class="d-block w-50 mx-auto" alt="Imagen 1">
+            </div>
+        {% endif %}
+        {% if instalacion.foto3 %}
+        <div class="carousel-item active">
+        <img src="{{instalacion.foto3.url}}" class="d-block w-50 mx-auto" alt="Imagen 1">
+        </div>
+    {% endif %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>

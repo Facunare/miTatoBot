@@ -58,7 +58,9 @@ def ask(request):
 def deleteChat(request):
     mensajes = Messages.objects.all().filter(user = request.user)
     mensajes.delete()
-    return redirect('contacto')
+    request_path = request.GET.get('request_path')
+    print(request_path)
+    return redirect(request_path)
 
 
 def signup(request):

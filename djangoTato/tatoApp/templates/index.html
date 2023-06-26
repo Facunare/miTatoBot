@@ -322,7 +322,7 @@
               {% endif %}
             {% endfor %}
             {% if mensajes %}
-              <form action="{% url 'deleteChat' %}" class="delete">
+              <form action="{% url 'deleteChat' %}?request_path={{request.get_full_path}}" class="delete">
                 <button><i class='bx bx-trash'></i></button>
               </form>
             {% endif %}
@@ -452,6 +452,10 @@
           display: flex;
           justify-content: flex-end;
           padding: 5px 0;
+          position: absolute;
+          bottom: 50px;
+          height: 50px;
+          right: 5px;
         }
         
         .delete button {

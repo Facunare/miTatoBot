@@ -35,13 +35,18 @@ class tatoBot:
     
     def preprocess_text(self, text):
         text = text.lower()
-        text = self.tokenizer.texts_to_sequences([text])
-        text = pad_sequences(text, maxlen=self.max_length)
-        return text
+        text_sequence = self.tokenizer.texts_to_sequences([text])
+        text_padded = pad_sequences(text_sequence, maxlen=self.max_length)
+        return text_padded
     
     def responder_oracion(self, text):
         preprocessed_text = self.preprocess_text(text)
         prediction = self.model.predict(preprocessed_text)
         predicted_class_index = np.argmax(prediction, axis=1)[0]
         predicted_class_label = self.label_encoder.inverse_transform([predicted_class_index])[0]
+        confidence_score = prediction[0, predicted_class_index]
+        
+        if confidence_score < 0.7:
+            return "No entiendo tu pregunta"
+        
         return predicted_class_label

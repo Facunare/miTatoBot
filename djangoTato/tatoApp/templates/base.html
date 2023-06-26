@@ -27,11 +27,6 @@
                     <a class="nav-link active" aria-current="page" href="#proyectos">PROYECTOS</a>
                   </div>
                 </li>
-                <li class="nav-item">
-                  <div>
-                    <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">CONTACTO</a>
-                  </div>
-                </li>
                 {% if user.is_authenticated %}
                   <li class="nav-item logout"><a class="nav-link active" aria-current="page" href="{% url 'logout' %}">LOG OUT</a></li>
                 {% else %}

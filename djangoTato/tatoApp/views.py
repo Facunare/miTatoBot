@@ -33,13 +33,6 @@ def home(request):
     })
 
 @login_required
-def contacto(request):
-    mensajes = Messages.objects.all().filter(user = request.user)
-    return render(request, 'contacto.html', {
-        'mensajes':mensajes
-    })
-   
-@login_required
 def ask(request):
     if request.method == 'POST':
         
@@ -58,9 +51,7 @@ def ask(request):
 def deleteChat(request):
     mensajes = Messages.objects.all().filter(user = request.user)
     mensajes.delete()
-    request_path = request.GET.get('request_path')
-    print(request_path)
-    return redirect(request_path)
+    return JsonResponse({})
 
 
 def signup(request):

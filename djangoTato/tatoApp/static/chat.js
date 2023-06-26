@@ -72,15 +72,48 @@ function sendMessage(event) {
 
         deleteForm.appendChild(deleteButton);
         messagesContainer.appendChild(deleteForm);
-      
-    })
-    .catch(function (error) {
-      console.error('Error:', error);
-    });
-}
+        
+      })
+      .catch(function (error) {
+        console.error('Error:', error);
+      });
+    }
+    
+      function deleteMessages(event) {
+        event.preventDefault();
+    
+        var deleteForm = new FormData(document.getElementById('deleteForm'));
+        var form = document.getElementById('deleteForm')
+        fetch('../deleteChat/', {
+          method: 'POST',
+          body: deleteForm,
+          headers: {
+            'X-CSRFToken': getCookie('csrftoken'),
+            'X-Requested-With': 'XMLHttpRequest'
+          }
+        })
+          .then(function (res) {
+            return res.json();
+          })
+          .then(function (data) {
+            console.log("HOLAAA")
+            const messages = document.querySelectorAll('.message')
+            for(let message of messages){
+              message.remove()
+            }
+            form.style.display = "none"
+    
+            console.log('CSRF Token:', getCookie('csrftoken'));
+          })
+          .catch(function (error) {
+            console.error('Error:', error);
+          });
+      }
 
-  
-  function getCurrentTime() {
+
+
+
+function getCurrentTime() {
     var now = new Date();
     var hours = now.getHours().toString().padStart(2, '0');
     var minutes = now.getMinutes().toString().padStart(2, '0');

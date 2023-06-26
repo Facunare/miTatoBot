@@ -9,21 +9,29 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 
 # Create your views here.
+from django.contrib.auth.decorators import login_required
+
+@login_required
 def home(request):
+    mensajes = ""
     materias = Materias.objects.all()
     materiasConst = MateriasConstrucciones.objects.all()
     instalaciones = Instalaciones.objects.all()
     proyectos = Proyectos.objects.all()
-    mensajes = Messages.objects.all().filter(user = request.user)
+    
+    if request.user.is_authenticated:
+        mensajes = Messages.objects.filter(user=request.user)
+    
     print(materias)
+    
     return render(request, 'index.html', {
         'materias': materias,
-        'materiasConst':materiasConst,
+        'materiasConst': materiasConst,
         'instalaciones': instalaciones,
-        'proyectos':proyectos,
-        'mensajes':mensajes
-        
+        'proyectos': proyectos,
+        'mensajes': mensajes
     })
+
 @login_required
 def contacto(request):
     mensajes = Messages.objects.all().filter(user = request.user)

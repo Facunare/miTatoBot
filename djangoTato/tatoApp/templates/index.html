@@ -200,11 +200,99 @@
       <h2 class="main-title">PROYECTOS</h2>
       <div id="carouselExample-proyectos1" class="carousel slide">
         <div class="carousel-inner">
-          {% for proyecto in proyectos %}                   
-            <div class="carousel-item active">
-              {% include 'Proyecto.html' %}
+          <div class="carousel-item active">
+            <div class="container text-center">
+              <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="proyectos-container nutri-choise">
+                    <h2 class="proyectos-title">Nutri Choice <i class='bx bxs-medal'></i></h2>
+                    <small class="proyectos-descripcion">Nutrichoice es una aplicación que funciona escaneando el
+                      código
+                      de barras
+                      de productos en supermercados usando un teléfono, y devuelve todos los datos nutricionales
+                      incluyendo si es vegano,
+                      vegetariano, o sin tacc.</small>
+                    <hr>
+                    <div class="video-container">
+                      <iframe width="80%" height="480" src="https://www.youtube.com/embed/DvDOYWYVcow"
+                        title="Nutri Choice - Video de Presentacion de Proyecto ET36" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            {% endfor %}
+          </div>
+          <div class="carousel-item">
+            <div class="container text-center">
+              <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="proyectos-container nutri-choise">
+                    <h2 class="proyectos-title">One Click Mouse</i></h2>
+                    <small class="proyectos-descripcion">El gyromouse funciona por medio de un giroscopio que toma la
+                      rotación de la cabeza,
+                      y esta con ayuda de una librería, ubica el cursor en los ejes x e y.
+                      Con ayuda de un micrófono tomamos los decibelios y dependiendo de la intensidad de estos, se
+                      realiza click izquierdo o derecho.</small>
+                    <hr>
+                    <div class="video-container">
+                      <iframe width="80%" height="480" src="https://www.youtube.com/embed/yjtzx-GRhmU"
+                        title="OneClickMouse 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                      encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container text-center">
+              <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="proyectos-container nutri-choise">
+                    <h2 class="proyectos-title">GyroMouse</i></h2>
+                    <small class="proyectos-descripcion">Nutrichoice es una aplicación que funciona escaneando el
+                      código
+                      de barras
+                      de productos en supermercados usando un teléfono, y devuelve todos los datos nutricionales
+                      incluyendo si es vegano,
+                      vegetariano, o sin tacc.</small>
+                    <hr>
+                    <div class="video-container">
+                      <iframe width="80%" height="480" src="https://www.youtube.com/embed/lKyxwCDfDpE"
+                        title="GyroMouse 2022" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container text-center">
+              <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="proyectos-container nutri-choise">
+                    <h2 class="proyectos-title">AquaTech</i></h2>
+                    <small class="proyectos-descripcion">Recolectan el agua de lluvia, la filtran y la almacenan para
+                      su
+                      futuro uso.
+                      Fueron ideados para el Polo Educativo Saavedra,
+                      y servirían para el regado y la limpieza del mismo, para así reducir el consumo de agua
+                      potable.</small>
+                    <hr>
+                    <div class="video-container">
+                      <iframe width="80%" height="480" src="https://www.youtube.com/embed/phs4b6lJVsA"
+                        title="Proyecto AquaTech" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                      gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample-proyectos1"
           data-bs-slide="prev">
@@ -219,7 +307,7 @@
       </div>
     </section>
     <button class="message-bubble" id="message-bubble">
-      <i class='bx bxs-comment-dots'></i>
+      <img style="width: 100px;" src="{% static 'zyro-image.png.png' %}" alt="">
     </button>
     <div class="chatbot-container" id="chatbotContainer">
       <!-- Contenido del chatbot -->
@@ -241,7 +329,7 @@
           </div>
           <form action="{% url 'ask' %}" class="formMessage" id="formMessage"method="POST">
             {% csrf_token %}
-              <input required type="text" name="message" placeholder="Escribe tu mensaje..." required>
+              <input required type="text" name="message" class="input" placeholder="Escribe tu mensaje..." required>
               <button class="sendMessage" onclick="sendMessage(event)">
                 <i class='bx bx-search'></i>
               </button>
@@ -378,6 +466,7 @@
         
       </style>
       <script src="{% static 'chat.js' %}"></script>
+      <script src="{% static 'app.js' %}"></script>
       {% endblock content %}
 </body>
 </html>

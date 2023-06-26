@@ -33,32 +33,39 @@ function sendMessage(event) {
       .then(function (data) {
         var message = data.mensaje;
         var respuesta = data.respuesta;
-  
+        const input = document.querySelector(".input")
         var messagesContainer = document.querySelector('.messages .msg');
+        if(input.value !== ""){
+
+          var messageElement = document.createElement('p');
+          messageElement.style.color = "black"
+          messageElement.textContent = message;
+          messageElement.classList.add('question');
+          
+          var timestampElement = document.createElement('span');
+          timestampElement.style.color = "black"
+          timestampElement.textContent = getCurrentTime();
+          messageElement.appendChild(timestampElement);
+          
+          messagesContainer.appendChild(messageElement);
+    
+          if (respuesta) {
+            var responseElement = document.createElement('p');
+            responseElement.textContent = respuesta;
+            responseElement.classList.add('response');
+            responseElement.style.color = "black"
+            var responseTimestampElement = document.createElement('span');
+            responseTimestampElement.textContent = getCurrentTime();
+            responseElement.appendChild(responseTimestampElement);
+    
+            messagesContainer.appendChild(responseElement);
   
-        var messageElement = document.createElement('p');
-        messageElement.style.color = "black"
-        messageElement.textContent = message;
-        messageElement.classList.add('question');
-        
-        var timestampElement = document.createElement('span');
-        timestampElement.style.color = "black"
-        timestampElement.textContent = getCurrentTime();
-        messageElement.appendChild(timestampElement);
-        
-        messagesContainer.appendChild(messageElement);
-  
-        if (respuesta) {
-          var responseElement = document.createElement('p');
-          responseElement.textContent = respuesta;
-          responseElement.classList.add('response');
-          responseElement.style.color = "black"
-          var responseTimestampElement = document.createElement('span');
-          responseTimestampElement.textContent = getCurrentTime();
-          responseElement.appendChild(responseTimestampElement);
-  
-          messagesContainer.appendChild(responseElement);
+          }
+          input.value = ""
+        }else{
+          console.log("hola")
         }
+
       })
       .catch(function (error) {
         console.error('Error:', error);

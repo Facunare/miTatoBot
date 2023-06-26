@@ -12,7 +12,7 @@
       </div>
       <form action="{% url 'ask' %}" class="formMessage" method="POST">
         {% csrf_token %}
-          <input type="text" name="message" placeholder="Escribe tu mensaje..." required>
+          <input type="text" name="message" placeholder="Escribe tu mensaje..." class="input" required>
           <button class="sendMessage">
             <i class='bx bx-search'></i>
           </button>

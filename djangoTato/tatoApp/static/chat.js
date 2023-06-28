@@ -62,16 +62,16 @@ function sendMessage(event) {
         input.value = "";
       }
 
-        var deleteForm = document.createElement('form');
-        deleteForm.action = 'deleteChat/';
-        deleteForm.method = 'post';
-        deleteForm.classList.add('delete');
+        // var deleteForm = document.createElement('form');
+        // deleteForm.action = 'deleteChat/';
+        // deleteForm.method = 'post';
+        // deleteForm.classList.add('delete');
 
-        var deleteButton = document.createElement('button');
-        deleteButton.innerHTML = '<i class="bx bx-trash"></i>';
+        // var deleteButton = document.createElement('button');
+        // deleteButton.innerHTML = '<i class="bx bx-trash"></i>';
 
-        deleteForm.appendChild(deleteButton);
-        messagesContainer.appendChild(deleteForm);
+        // deleteForm.appendChild(deleteButton);
+        // messagesContainer.appendChild(deleteForm);
         
       })
       .catch(function (error) {
@@ -79,36 +79,36 @@ function sendMessage(event) {
       });
     }
     
-      function deleteMessages(event) {
-        event.preventDefault();
+      // function deleteMessages(event) {
+      //   event.preventDefault();
     
-        var deleteForm = new FormData(document.getElementById('deleteForm'));
-        var form = document.getElementById('deleteForm')
-        fetch('../deleteChat/', {
-          method: 'POST',
-          body: deleteForm,
-          headers: {
-            'X-CSRFToken': getCookie('csrftoken'),
-            'X-Requested-With': 'XMLHttpRequest'
-          }
-        })
-          .then(function (res) {
-            return res.json();
-          })
-          .then(function (data) {
-            console.log("HOLAAA")
-            const messages = document.querySelectorAll('.message')
-            for(let message of messages){
-              message.remove()
-            }
-            form.style.display = "none"
+      //   var deleteForm = new FormData(document.getElementById('deleteForm'));
+      //   var form = document.getElementById('deleteForm')
+      //   fetch('../deleteChat/', {
+      //     method: 'POST',
+      //     body: deleteForm,
+      //     headers: {
+      //       'X-CSRFToken': getCookie('csrftoken'),
+      //       'X-Requested-With': 'XMLHttpRequest'
+      //     }
+      //   })
+      //     .then(function (res) {
+      //       return res.json();
+      //     })
+      //     .then(function (data) {
+      //       console.log("HOLAAA")
+      //       const messages = document.querySelectorAll('.message')
+      //       for(let message of messages){
+      //         message.remove()
+      //       }
+      //       form.style.display = "none"
     
-            console.log('CSRF Token:', getCookie('csrftoken'));
-          })
-          .catch(function (error) {
-            console.error('Error:', error);
-          });
-      }
+      //       console.log('CSRF Token:', getCookie('csrftoken'));
+      //     })
+      //     .catch(function (error) {
+      //       console.error('Error:', error);
+      //     });
+      // }
 
 
 

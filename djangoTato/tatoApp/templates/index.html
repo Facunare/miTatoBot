@@ -161,7 +161,7 @@
         </div>
       </div>
     </section>   
-     <section class="materias">
+     <section class="materias" id="materias">
       <h2 class="main-title">MATERIAS</h2>
       <div class="container">
         <div class="swiper tranding-slider top-slider">
@@ -186,7 +186,7 @@
       </div>
     </section>
 
-    <section class="instalaciones">
+    <section class="instalaciones" id="instalaciones">
       <h2 class="main-title">NUESTRAS INSTALACIONES</h2>
       {% for instalacion in instalaciones %}
       <div class="row d-flex" style="margin: 5px 15px; height: auto;" >
@@ -196,7 +196,7 @@
         </div>
           {% endfor %}
     </section>
-    <section class="proyectos">
+    <section class="proyectos" id="proyectos">
       <h2 class="main-title">PROYECTOS</h2>
       <div id="carouselExample-proyectos1" class="carousel slide">
         <div class="carousel-inner">
@@ -321,14 +321,14 @@
                 <p style="color:black;" class="question message">{{mensaje.content}}<span>{{ mensaje.created_at | date:"H:i" }}</span></p>
               {% endif %}
             {% endfor %}
-            {% if mensajes %}
+            {% comment %} {% if mensajes %}
               <form action="{% url 'deleteChat' %}" class="delete" id="deleteForm">
                 {% csrf_token %}
                 <button onclick="deleteMessages(event)">
                   <i class='bx bx-trash'></i>
                 </button>
               </form>
-            {% endif %}
+            {% endif %} {% endcomment %}
           </div>
           <form action="{% url 'ask' %}" class="formMessage" id="formMessage"method="POST">
             {% csrf_token %}
